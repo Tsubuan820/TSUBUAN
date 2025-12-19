@@ -241,7 +241,7 @@
                 
                 const num = (i + 1).toString().padStart(2, '0');
                 // 画像パス（image/image1.jpg, image/image2.jpg...）
-                const imgPath = `image/image${i + 1}.jpg`; 
+                const imgPath = `image${i + 1}.jpg`; 
 
                 // 設定があればそれを使い、なければデフォルト設定を使う
                 const work = config.works[i] || { 
