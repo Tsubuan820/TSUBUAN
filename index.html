@@ -105,6 +105,7 @@
         .modal.active { opacity: 1; pointer-events: auto; }
 
         .modal-content {
+            position: relative;
             background: var(--bg-color);
             padding: 2.5rem;
             max-width: 900px; width: 100%;
@@ -128,6 +129,28 @@
             align-self: flex-start; transition: background 0.2s;
         }
         .close-btn:hover { background: var(--accent-color); }
+            .close-x {
+              position: absolute;
+              top: 1rem;
+              right: 1rem;
+              width: 2.5rem;
+              height: 2.5rem;
+              border: 2px solid var(--text-color);
+              font-size: 1.5rem;
+              font-weight: 700;
+              cursor: pointer;
+              color: var(--text-color);
+              background: var(--bg-color);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.2s;
+        }
+        .close-x:hover {
+              background: var(--accent-color);
+              border-color: var(--accent-color);
+              color: var(--text-color);
+        }
 
         /* --- スマートフォン・タブレット対応 --- */
         @media (max-width: 900px) {
@@ -166,6 +189,7 @@
 
     <div id="modal" class="modal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-x" onclick="closeModal()">×</span>
             <img id="modal-img" class="modal-img" src="" alt="Project Image">
             <h2 id="modal-title" style="margin:0; font-weight:700; text-transform:uppercase; line-height: 1.1;"></h2>
             <p id="modal-cat" style="color:#666; font-weight:700; margin-top:0.5rem;"></p>
